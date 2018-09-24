@@ -1,0 +1,90 @@
+$green: rgb(115, 205, 95);
+$darkgreen: rgb(100, 190, 85);
+
+html, body {
+    * {
+        line-height: 1.2em;
+        margin: 0;
+        padding: 0;
+    }
+}
+.container {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns:repeat(3, 1fr); 
+    grid-template-rows: 1fr repeat(6, 50px);
+}
+.notesForm {
+    grid-area: 1 / 1 / span 1 / span 5;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    top: 0;
+    left: 0;
+    background-color: #73cd5f;
+    padding: 15px 10px;
+    /* align-items: center; */
+
+    .formInput {
+        grid-area: 1 / 1 / span 2 / span 1;
+        padding: 10px 5px;
+        overflow: hidden;
+        border-radius: 7px;
+        border: none;
+        margin-right: 20px;
+        /* margin: 0 auto; */
+        /* width: auto; */
+
+        &:focus {
+            outline: none;
+        }
+    }
+    .formSubmit {
+        height: 40px;
+        width: 40px;
+        border: 1px solid black;
+        border-radius: 50%;
+        margin-left: -40px;
+        font-weight: bold;
+        background-color: #64be55;
+
+        &:focus{
+            outline: none;
+        }
+    }
+    .formDelete {
+        grid-area: 1 / 4;
+        height: 40px;
+        width: 40px;
+        border: 1px solid black;
+        border-radius: 50%;
+        font-weight: bold;
+        justify-self: right;
+        background-color: red;
+
+        &:focus{
+            outline: none;
+        }
+    }
+}
+.notesDiv {
+    display: grid;
+    grid-area: 2 / 1 / span 1 / span 5;
+    grid-template-columns:repeat(4, 1fr); 
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    
+    .note {
+        height: 50px;
+        // margin: 10px;
+        border: 1px solid $darkgreen;
+        border-radius: 10px;
+        text-align:center;
+        align-items: center;
+        display: inline-grid;
+        transition: background-color 0.2s ease-in-out;
+
+        &:hover {
+            background-color: $green;
+        }
+    }
+}
